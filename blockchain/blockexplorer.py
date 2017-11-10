@@ -124,7 +124,7 @@ def get_multi_address(addresses, filter=None, limit=None, offset=None, api_code=
     :return: an instance of :class:`MultiAddress` class
     """
 
-    if isinstance(addresses, basestring):
+    if isinstance(addresses, (bytes, str)):
         resource = 'multiaddr?active=' + addresses
     else:
         resource = 'multiaddr?active=' + '|'.join(addresses)
